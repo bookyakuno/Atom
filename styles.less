@@ -1,0 +1,180 @@
+
+
+
+
+// 折りたたみ
+atom-text-editor::shadow .folded {
+    // border-bottom: 1px dashed salmon;  // 下線
+    background-color: #073c1e;
+    text-decoration:underline;
+}
+// To remove underline from the line number marker:
+
+atom-text-editor::shadow .line-number.folded {
+  // border-bottom: none;
+}
+//折りたたみマークの表示
+atom-text-editor::shadow .fold-marker {
+
+  display: none;
+  background-color:#red;
+}
+
+
+ //
+ // #50B7AF
+
+ /*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+// .tree-view {
+  // background-color: whitesmoke;
+// }
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}
+
+
+// 選択範囲を色変え
+atom-text-editor::shadow {
+  .gutter .cursor-line {
+    background-color: fade(cyan, 14%);
+  }
+  .highlights {
+    .selection .region {
+      background: fade(cyan, 30%);
+    }
+    .find-result .region {
+      border: 1px solid fade(cyan, 80%);
+    }
+  }
+}
+
+//
+// // 背景をボーターカラーにする
+// atom-text-editor::shadow .line[data-screen-row$="0"],
+// atom-text-editor::shadow .line[data-screen-row$="2"],
+// atom-text-editor::shadow .line[data-screen-row$="4"],
+// atom-text-editor::shadow .line[data-screen-row$="6"],
+// atom-text-editor::shadow .line[data-screen-row$="8"] {
+//   background-color: #292929;
+// }
+
+
+// コメント
+atom-text-editor::shadow {
+  .comment {
+    color: #29942c;
+    font-style: italic;
+    // font-size:20px;
+
+}
+}
+
+ // 記号
+// atom-text-editor::shadow {
+// .punctuation {
+//               color: red;
+//       }
+//   }
+
+
+
+// かっこのハイライト
+atom-text-editor::shadow  .bracket-matcher .region {
+
+    border-radius: 3px;
+
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    background-color: rgba(0, 255, 0, 0.1);
+    z-index: 100;
+}
+
+// アクティブウィンドウ以外を暗く
+atom-workspace-axis {
+  .pane {
+    //opacity: 0.4;
+    &.active {
+      //background-color:#200b53;
+      // opacity: 1.0;
+    }
+  }
+}
+
+.tab-bar .tab {
+//  color: #e0e0e0!important;
+
+  &.active {
+
+    background-color:@syntax-selection-color;
+    //color: #ffffff!important;
+  }
+}
+
+
+/* -- multiple panes --
+atom-pane {
+}
+atom-pane.active {
+    border-width: 3px;
+    border-style: solid;
+    border-color: #175270;
+}
+*/
+
+
+
+
+
+.embedded {
+    color:  red;
+  }
+
+
+
+
+
+atom-text-editor::shadow{
+      .markup.heading{
+        color:#88930e;
+        font-weight:bold;
+        font-size : 20px;
+
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// atom-text-editor, :host {
+//   .markup.heading.heading-1 {
+//
+//     font-weight:bold;
+//     font-size : ~"calc(30px)";
+//   }
+//   }
