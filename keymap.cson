@@ -1,0 +1,223 @@
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+
+
+
+# ============================================================
+'.tree-view':
+
+  # ツリービュー 名称変更
+  'ctrl-5': 'tree-view:move'
+
+
+  # ============================================================
+'.platform-darwin':
+
+
+
+
+
+
+    'shift-alt-cmd-x': 'vim-mode-plus-user:move-to-previous-symbol'
+    'shift-alt-cmd-c': 'vim-mode-plus-user:move-to-next-symbol'
+
+
+
+    # 'shift-alt-cmd-c': 'symbols-view:go-to-declaration'
+    # 'shift-alt-cmd-x': 'symbols-view:return-from-declaration'
+    # 'shift-cmd-alt-R': 'symbols-view:toggle-project-symbols'
+
+
+
+
+
+    # 'cmd-alt-tab':          'tree-view:toggle'
+    'ctrl-cmd-r': 'tree-view:reveal-active-file'
+    # 'ctrl-4': 'tree-view:toggle
+
+    # ツリービューにフォーカス
+    'ctrl-4': 'tree-view:toggle-focus'
+
+
+    # ============================================================
+'.platform-darwin, .platform-win32, .platform-linux':
+  'shift-ctrl-g': 'go-to-line:toggle'
+
+
+  # ============================================================
+'.platform-darwin atom-text-editor':
+  'ctrl-f': 'find-and-replace:find-next-selected'
+
+
+# ============================================================
+'.platform-darwin atom-text-editor:not([mini])':
+  'ctrl-backspace': 'magic-tag:delete'
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+
+
+# 'atom-workspace, atom-workspace atom-text-editor':
+#   'cmd-shift-M': 'markdown-preview:toggle'
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+
+
+
+
+
+# ============================================================
+'atom-text-editor':
+
+
+  # 10行ジャンプ
+  'alt-cmd-ctrl-up': 'line-jumper:move-up'
+  'alt-cmd-ctrl-down': 'line-jumper:move-down'
+  'alt-cmd-ctrl-shift-cmd-up': 'line-jumper:select-up'
+  'alt-cmd-ctrl-shift-cmd-down': 'line-jumper:select-down'
+
+  # 'ctrl-tab':        'editor:toggle-current-row-folding'
+  'ctrl-alt-tab':        'markdown-folder:toggle'
+
+
+  'alt-shift-space': 'autocomplete-plus:activate'
+  # 'cmd-up': 'inc-dec-value:increment'
+  # 'cmd-down': 'inc-dec-value:decrement'
+  #
+  # 'cmd-alt-up': 'inc-dec-value:increment-by-decade'
+  # 'cmd-alt-down': 'inc-dec-value:decrement-by-decade'
+
+  # ============================================================
+'atom-workspace':
+
+
+
+    # 'cmd-1': 'symbols-tree-view:toggle'
+# ============================================================
+    # 'cmd-alt-up': 'symbols-view:return-from-declaration'
+    # 'cmd-alt-down': 'symbols-view:go-to-declaration'
+
+
+
+
+    'ctrl-x':                'multi-cursor-plus:mark'
+
+    'ctrl-up':               'multi-cursor-plus:move-up'
+    'ctrl-down':             'multi-cursor-plus:move-down'
+    'ctrl-left':             'multi-cursor-plus:move-left'
+    'ctrl-right':            'multi-cursor-plus:move-right'
+
+    'ctrl-ctrl-left':        'multi-cursor-plus:move-to-beginning-of-word'
+    'ctrl-ctrl-right':       'multi-cursor-plus:move-to-end-of-word'
+
+    'ctrl-home':             'multi-cursor-plus:move-to-first-character-of-line'
+    'ctrl-end':              'multi-cursor-plus:move-to-end-of-line'
+    'ctrl-home':             'multi-cursor-plus:move-to-top'
+    'ctrl-end':              'multi-cursor-plus:move-to-bottom'
+    # 'ctrl-shift-up':         'multi-cursor-plus:select-up'
+    # 'ctrl-shift-down':       'multi-cursor-plus:select-down'
+    'ctrl-shift-left':       'multi-cursor-plus:select-left'
+    'ctrl-shift-right':      'multi-cursor-plus:select-right'
+    'ctrl--shift-left':      'multi-cursor-plus:select-to-beginning-of-word'
+    'ctrl--shift-right':     'multi-cursor-plus:select-to-end-of-word'
+    'ctrl-shift-home':       'multi-cursor-plus:select-to-first-character-of-line'
+    'ctrl-shift-end':        'multi-cursor-plus:select-to-end-of-line'
+    'ctrl--shift-home':      'multi-cursor-plus:select-to-top'
+    'ctrl--shift-end':       'multi-cursor-plus:select-to-bottom'
+    'cmd-g':                 'an-color-picker:show'
+    "shift-cmd-r":           "native-color-picker:pick"
+
+    # アウトラインウィンドウのトグル
+    'cmd-1':                'symbols-tree-view:toggle'
+
+
+
+    # カーソルヒストリー
+    # 'ctrl-r':             'cursor-history:next'
+    # 'ctrl-t':             'cursor-history:prev'
+    #現在のエディタ内
+    # 'ctrl-cmd-i':         'cursor-history:next-within-editor'
+    # 'ctrl-cmd-o':         'cursor-history:prev-within-editor'
+    # 'ctrl-cmd-o':         ' cursor-history:clear'
+    # Key bindings for multi-cursor
+
+    # auto Fold
+
+
+    # ctivate-power-mode
+    # 'ctrl-alt-o':         'activate-power-mode:toggle'
+    'ctrl-shift-y':         'fold-comments:toggle'
+
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+'body':
+
+
+
+    'ctrl-tab':          'editor:toggle-current-row-folding'
+    # 'ctrl-tab':          'user:toggle-fold'
+
+    # やり直し
+    'cmd-shift-Z':          'core:redo'
+
+    'alt-cmd-w':            'pane:close'
+
+
+    # タブの切替
+    'ctrl-w':               'pane:show-next-item'
+    'ctrl-q':               'pane:show-previous-item'
+
+
+    # フォーカスを左右に移す
+    'cmd-ctrl-w':      'window:focus-pane-on-right'
+    'cmd-ctrl-q':      'window:focus-pane-on-left'
+    # 'ctrl-alt-q': 'window:focus-pane-on-left'
+    # 'ctrl-alt-w': 'window:focus-pane-on-right'
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+'atom-workspace atom-text-editor:not([mini])':
+    'shift-tab':            'editor:outdent-selected-rows'
+    'tab':                  'editor:indent-selected-rows'
+    # コメントアウト
+    'ctrl-3':               'editor:toggle-line-comments'
+    # 'ctrl-tab':             'editor:fold-current-row'
+    'ctrl-cmd-tab':         'editor:unfold-current-row'
+    'ctrl-cmd-shift-tab':   'editor:indent'
+    'shift-alt-t':          'toggle-current-row-folding'
+
+    # インデント揃え
+    'alt-q':                'indent-helper:indent'
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
+  'shift-space':            'maximize-panes:maximize'
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+# 'atom-text-editor':
+  # 'ctrl-k':               'editor:cut-to-end-of-line'
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+# 無効にする場合は、'unset!'
