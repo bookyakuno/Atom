@@ -302,6 +302,7 @@ SOFTWARE.
                     }
                   }
                 }
+
               ]
             }
           }
@@ -743,6 +744,7 @@ SOFTWARE.
               "name": "punctuation.md"
             }
           },
+
           "patterns": [
             {
               "match": "(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=[\\s|:|<])",
@@ -1397,6 +1399,22 @@ SOFTWARE.
         }
       ]
     },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.md",
+          "match": "\\(.*\\)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
     "emphasis": {
       "patterns": [
         {
@@ -1462,7 +1480,7 @@ SOFTWARE.
           }
         },
         {
-          "match": "^http",
+          "match": "http",
           "name": "strong.emphasis.bold.markup.md",
           "captures": {
             "1": {
@@ -1473,8 +1491,30 @@ SOFTWARE.
             }
           }
         },
-
-
+        {
+          "match": "\\d+",
+          "name": "strong.emphasis.bold.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "\\`.*\\`",
+          "name": "strong.emphasis.bold.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
         {
           "match": "【.*】",
           "name": "strong.emphasis.bold.markup.md",
@@ -1487,6 +1527,8 @@ SOFTWARE.
             }
           }
         },
+
+
         {
           "match": "(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+?)(\\1)(?=\\w)",
           "name": "strong.emphasis.bold.markup.md",
@@ -1655,6 +1697,14 @@ SOFTWARE.
       "patterns": [
         {
           "match": "\\\\.",
+          "name": "escape.constant.md"
+        }
+      ]
+    },
+    "escapes": {
+      "patterns": [
+        {
+          "match": "▼",
           "name": "escape.constant.md"
         }
       ]
