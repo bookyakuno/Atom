@@ -24,6 +24,8 @@ SOFTWARE.
 */
 
 
+
+
 {
   "name": "Markdown",
   "scopeName": "text.md",
@@ -501,7 +503,7 @@ SOFTWARE.
     "lists": {
       "patterns": [
         {
-          "match": "^(?:\\s*)([-+\\*] \\[ \\]\\s?)$",
+          "match": "^(?:\\s*)([☆+\\*] \\[ \\]\\s?)$",
           "name": "empty.task.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -519,7 +521,7 @@ SOFTWARE.
           }
         },
         {
-          "match": "^(?:\\s*)([-+\\*]{1}\\s?)$",
+          "match": "^(?:\\s*)([☆+\\*]{1}\\s?)$",
           "name": "empty.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -537,7 +539,7 @@ SOFTWARE.
           }
         },
         {
-          "match": "^(?:\\s*)([-+\\*] \\[ \\]\\s)(.*)$",
+          "match": "^(?:\\s*)([☆+\\*] \\[ \\]\\s)(.*)$",
           "name": "task.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -575,7 +577,7 @@ SOFTWARE.
           }
         },
         {
-          "match": "^(?:\\s*)([-+\\*] \\[[xX]\\]\\s)(.*)$",
+          "match": "^(?:\\s*)([☆+\\*] \\[[xX]\\]\\s)(.*)$",
           "name": "completed.task.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -613,7 +615,7 @@ SOFTWARE.
           }
         },
         {
-          "match": "^(?:\\s*)([-+\\*]{1}\\s)(.*)$",
+          "match": "^(?:\\s*)([☆+\\*]{1}\\s)(.*)$",
           "name": "unordered.list.markup.md",
           "captures": {
             "1": {
@@ -1705,7 +1707,7 @@ SOFTWARE.
     "escapes": {
       "patterns": [
         {
-          "match": "▼",
+          "match": "▼|にに|がが|はは(?!ははは|はははは)|をを|、、|。。|^(?: {0,3})(・\\s|\\-\\s){1}(?: ){0,1}",
           "name": "escape.constant.md"
         }
       ]
