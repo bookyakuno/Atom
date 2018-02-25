@@ -1,51 +1,69 @@
+atom-text-editor.is-focused.editor {
+  .cursor-line {
+    // background: rgba(64, 64, 37, 5);
+    background: rgba(26, 97, 143, 0.3);
+  }
+}
 
 
 
 
-// 折りたたみ
+
+.tree-view {
+  .status-ignored {
+    display: none;
+  }
+}
+// エディター …… フォントを少し大きく
+.editor  {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+// タブの幅 …… 狭く
+.theme-one-dark-ui,
+.theme-one-light-ui {
+  .tab {
+    min-width: 10em; // larger minimum width
+    max-width: 16em; // smaller max width
+  }
+}
+// 折りたたみ …… 背景色を付ける
 atom-text-editor::shadow .folded {
-    // border-bottom: 1px dashed salmon;  // 下線
-    background-color: #073c1e;
-    text-decoration:underline;
+  text-decoration: underline;
+  // border-bottom: 1px dashed salmon;  // 下線
+
+  background-color: #073c1e;
 }
 // To remove underline from the line number marker:
-
 atom-text-editor::shadow .line-number.folded {
   // border-bottom: none;
 }
 //折りたたみマークの表示
 atom-text-editor::shadow .fold-marker {
-
   display: none;
-  background-color:#red;
+
+  background-color: #red;
 }
-
-
- //
- // #50B7AF
-
- /*
- * Examples
- * (To see them, uncomment and save)
- */
-
+//
+// #50B7AF
+/*
+* Examples
+* (To see them, uncomment and save)
+*/
 // style the background color of the tree view
 // .tree-view {
-  // background-color: whitesmoke;
+// background-color: whitesmoke;
 // }
-
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
   // color: white;
   // background-color: hsl(180, 24%, 12%);
 }
-
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
   // border-color: red;
 }
-
-
 // 選択範囲を色変え
 atom-text-editor::shadow {
   .gutter .cursor-line {
@@ -61,7 +79,6 @@ atom-text-editor::shadow {
   }
 }
 
-//
 // // 背景をボーターカラーにする
 // atom-text-editor::shadow .line[data-screen-row$="0"],
 // atom-text-editor::shadow .line[data-screen-row$="2"],
@@ -75,106 +92,373 @@ atom-text-editor::shadow {
 // コメント
 atom-text-editor::shadow {
   .comment {
-    color: #29942c;
+    color: #48bd4a;
+
     font-style: italic;
     // font-size:20px;
-
+  }
 }
-}
-
- // 記号
+// 記号
 // atom-text-editor::shadow {
 // .punctuation {
 //               color: red;
 //       }
 //   }
-
-
-
 // かっこのハイライト
-atom-text-editor::shadow  .bracket-matcher .region {
+atom-text-editor::shadow .bracket-matcher .region {
+  z-index: 100;
 
-    border-radius: 3px;
-
-    border: 1px solid rgba(0, 255, 0, 0.5);
-    background-color: rgba(0, 255, 0, 0.1);
-    z-index: 100;
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  border-radius: 3px;
+  background-color: rgba(0, 255, 0, 0.1);
 }
-
 // アクティブウィンドウ以外を暗く
-atom-workspace-axis {
-  .pane {
-    //opacity: 0.4;
-    &.active {
-      //background-color:#200b53;
-      // opacity: 1.0;
-    }
-  }
-}
+// atom-workspace-axis {
+//   .pane {
+//     opacity: 0.4;
+//     &.active {
+//       background-color:#200b53;
+//       opacity: 1.0;
+//     }
+//   }
+// }
 
 .tab-bar .tab {
-//  color: #e0e0e0!important;
-
+  //  color: #e0e0e0!important;
   &.active {
-
-    background-color:@syntax-selection-color;
+    background-color: @syntax-selection-color;
     //color: #ffffff!important;
   }
 }
-
-
 /* -- multiple panes --
 atom-pane {
 }
 atom-pane.active {
-    border-width: 3px;
-    border-style: solid;
-    border-color: #175270;
+border-width: 3px;
+border-style: solid;
+border-color: #175270;
 }
 */
-
-
-
-
-
 .embedded {
-    color:  red;
+  color: red;
+}
+// ###########################################
+// ###########################################
+atom-text-editor::shadow {
+  .markup.list {
+    // color: rgb(101, 78, 218);
+
+    // position: relative;
+    // padding-top: 5px;
+    // padding-bottom: 5px;
+    // margin-left: -10px;
+
+    // border-radius: 10px;
+    // border: solid;
+    // border-width: 0px 0px 0px 10px;
   }
-
-
-
-
-
-atom-text-editor::shadow{
-      .markup.heading{
-        color:#88930e;
-        font-weight:bold;
-        font-size : 20px;
-
-      }
 }
 
 
+atom-text-editor::shadow {
+  // Markdown見出し
+  .markup.md, .source.gfm {
+     .heading-1 {
+       margin-left: -22px;
+       padding-right: 500px;
+       padding-left: 10px;
+       // 上下を1行分(15px)広くして目立つように
+       // パディングを右にだけ広く伸ばして擬似的に行に色付け
+       position: absolute;
+       width: 1000px;
 
+       color: #BFE669;
+       // 左側だけボーダーを付けて目立つように
+       border: solid;
+       border-width: 0px 0px 1px 0px;
+background:linear-gradient(90deg,#BFE669 0%,#BFE669 3%,rgba(0, 0, 0, 0) 3%,rgba(0, 0, 0, 0) 100%);
+       // 行がずれない程度にすこし大きく
 
+       font-size:20px;
+     }
+     .heading-2 {
+       margin: 0px 5px 0px -40px ;
+       padding: 0px 150px 0px 5px ;
+       position: absolute;
+       width: 300px;
 
+       border: solid #BFE669;
+       border-width: 0px 0px 1px 5px;
+background:linear-gradient(90deg,#BFE669 0%,#BFE669 13%,rgba(0, 0, 0, 0) 13%,rgba(0, 0, 0, 0) 100%);
 
+       font-size:20px;
+     }
+     .heading-3 {
+       margin: 0px 5px 0px -40px ;
+       padding: 0px 150px 0px 5px ;
+       position: absolute;
+       width: 1000px;
 
+       border: solid #BFE669;
+       border-width: 0px 0px 0px 5px;
+background:linear-gradient(90deg,#EB9634 0%,#EB9634 4%,rgba(0, 0, 0, 0) 4%,rgba(0, 0, 0, 0) 100%);
 
+       font-size:15px;
+     }
+     .heading-4 {
+       margin: 0px 5px 0px -48px ;
+       padding: 0px 10px 0px 5px ;
 
+       border: solid #BFE669;
+       border-width: 0px 0px 1px 0px;
+// background:linear-gradient(90deg,#BFE669 0%,#BFE669 21%,rgba(0, 0, 0, 0) 21%,rgba(0, 0, 0, 0) 100%);
 
+       font-size:15px;
+     }
 
-
-
-
-
-
-
-
-// atom-text-editor, :host {
-//   .markup.heading.heading-1 {
+   }
+ }
+// atom-text-editor::shadow {
+//   .markup.heading {
+//     position: relative;
 //
-//     font-weight:bold;
-//     font-size : ~"calc(30px)";
+//     margin: -22px;
+//     // left: -40px;
+//     // 上下を1行分(15px)広くして目立つように
+//     // パディングを右にだけ広く伸ばして擬似的に行に色付け
+//     // padding: 15px 3000px 15px 30px;
+//     // padding-top: 5px;
+//     // padding-bottom: 5px;
+//     // padding-left: 5px;
+//     padding-right: 3000px;
+//
+//     color: #BFE669;
+//     // background-color: rgb(11, 57, 56);
+//     // 左側だけボーダーを付けて目立つように
+//     border: solid;
+//     border-width: 0px 0px 1px 10px;
+//     // color: #4E9AF2;
+//     // 行がずれない程度にすこし大きく
+//
+//     font-size:20px;
+//     // width: 3000px;
+//     // height: 3000px;
 //   }
+// }
+atom-text-editor::shadow {
+  .markup.bold {
+    // color:@px-red;
+    color: #90c2db;
+
+    font-weight: normal!important;
+  }
+}
+atom-text-editor::shadow {
+  .markup.italic {
+    color: #63cfc6;
+
+    font-weight: normal;
+  }
+}
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+.string {
+  color: #A8FF60;
+  .constant {
+    color: #00A0A0;
+  }
+  &.regexp {
+    color: #E9C062;
+    .constant.character.escape,
+    .source.ruby.embedded,
+    .string.regexp.arbitrary-repetition {
+      color: #FF8000;
+    }
+    &.group {
+      color: #C6A24F;
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// markdown preview
+.markdown-preview {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+
+  color: black;
+
+  @c_border: #666; // border-color
+  hr {
+    margin: 50px 0;
+
+    background-color: transparent;
+    &:after {
+      display: block;
+
+      content: "";
+
+      border-top-style: ridge;
+    }
+    &.pb {
+      // <hr class="pb">を入れる事で、
+      // プリント時の改ページを指定することができる。
+      page-break-after: always;
+      &:after {
+        display: none;
+      }
+    }
+  }
+  h1,  h2,  h3,  h4,  h5 {
+    border-color: @c_border;
+
+    font-weight: normal;
+  }
+  h1 {
+    margin: 30px auto;
+
+    text-align: center;
+    letter-spacing: 5px;
+
+    border: none;
+
+    font-size: 35px;
+    // width: 100%;
+  }
+  h2 {
+    margin: 50px auto 25px;
+
+    letter-spacing: 3px;
+
+    border-bottom: solid;
+
+    font-size: 25px;
+  }
+  h3 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+  }
+  // 僕の用途ではh4以降は基本的に必要ないので、
+  // 設定していません。
+  // 見出し以外のタグを字下げする
+  // ぱっと思いつく、よく使うタグを指定
+  blockquote,
+  dl,
+  ol,
+  p,
+  pre,
+  table,
+  ul {
+    margin-left: 25px;
+    dl,
+    ol,
+    ul {
+      margin-left: 0;
+    }
+  }
+  table {
+    max-width: 800px;
+
+    border-spacing: 0;
+
+    border-collapse: collapse;
+    th {
+      border-color: @c_border;
+      background-color: #eee;
+    }
+    tr {
+      border-top: #666;
+    }
+    td {
+      border-color: @c_border;
+    }
+  }
+  .margin-clear {
+    margin-left: 0;
+  }
+  // テキストの中央揃え
+  .center {
+    text-align: center;
+
+    &:extend(.margin-clear);
+  }
+  // テキストの右寄せ
+  .right {
+    text-align: right;
+
+    &:extend(.margin-clear);
+  }
+}
+
+//markdown 左に空白
+// atom-text-editor::not([mini]){
+//    padding-left: 30px;
+//  }
+//
+//  markdown //
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+//
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// インデントにカラーリング
+// .indent-guide-improved {
+//   border: 9px solid #184f5c;
+//   &.indent-guide-stack {
+//     border: 9px solid #28434d;
+//     &.indent-guide-active {
+//       border: 9px solid rgb(74, 92, 157);
+//     }
 //   }
+// }
+
+
+
+
+
+
+
+
+
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+//
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
+// ツリービュー
+.tree-view {
+  // font-size: 12px;
+  .list-item {
+    // line-height: 21px !important;
+  }
+  .selected:before,
+  .selected:before {
+    height: 28px !important;
+
+    background: fade(cyan, 30%);
+
+    font-size: 2px;
+  }
+  .icon:before {
+    font-size: 18px;
+  }
+}
+
+.tab-bar {
+  height: 20px;
+
+}
+
+// A CUSTOM TEXT IN TABS
+.tab-bar .tab .title {
+  position: absolute;
+  top:-8px;
+  right: 0px;
+  left: 0px;
+
+}
