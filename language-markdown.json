@@ -1595,7 +1595,7 @@ SOFTWARE.
           }
         },
         {
-          "match": "「.*」",
+          "match": "「.*?」|'.*?'|\".*?\"",
           "name": "emphasis.italic.markup.md",
           "captures": {
             "1": {
