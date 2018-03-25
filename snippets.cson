@@ -1,0 +1,86 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+
+# =====================================================
+'.text.html.basic':
+# =====================================================
+  'test':
+    'prefix': 'qq'
+    'body': """
+    <!-- ーーーーーーーーーーーーーーーーーーーーーーーーー -->
+    <!-- ーーーーーーーーーーーーーーーーーーーーーーーーー -->
+
+    """
+
+
+
+# =====================================================
+'.source.python':
+# =====================================================
+  'class_b3d':
+    'prefix': 'cs'
+    'body': """
+class $1(bpy.types.Operator):
+    bl_idname = '${2:object}.$1'
+    bl_label = '$1'
+    bl_description = '$1'
+  	bl_options = {'REGISTER', 'UNDO'}
+
+    def execute(self, context):
+        $3
+        return {'FINISHED'}
+    """
+
+# =====================================================
+# =====================================================
+  'dict':
+    'prefix': 'dict'
+    'body': """
+# 翻訳辞書
+translation_dict_$1 = {
+	"ja_JP": {
+		("*", "$2"):
+		"$2",
+	}
+}
+"""
+# =====================================================
+# =====================================================
+  'Register':
+    'prefix': 'regi'
+    'body': """
+addon_keymaps = []
+def register():
+	bpy.utils.register_module(__name__)
+	wm = bpy.context.window_manager
+	km = wm.keyconfigs.addon.keymaps.new(name = '3D View Generic', space_type = 'VIEW_3D')
+	kmi = km.keymap_items.new($1.bl_idname, '$2', 'PRESS'$3)
+	addon_keymaps.append((km, kmi))
+
+
+def unregister():
+	bpy.utils.unregister_module(__name__)
+	for km, kmi in addon_keymaps:
+		km.keymap_items.remove(kmi)
+	addon_keymaps.clear()
+"""
